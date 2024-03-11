@@ -2,6 +2,7 @@ package com.example.rescueme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -41,6 +42,17 @@ public class MainActivity extends AppCompatActivity {
         spannableString.setSpan(new ForegroundColorSpan(Color.RED), startIndex, startIndex + targetWord.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         RegisterRedirection.setText(spannableString);
 
+    //    Intent intent= new Intent(MainActivity.this, RegisterActivity.class);
+    //    startActivity(intent);
+            RegisterRedirection.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent= new Intent(MainActivity.this, RegisterActivity.class);
+                    startActivity(intent);
+                    onResume();
+                }
+            });
     }
 
     public void checkRemember(){
