@@ -9,56 +9,63 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
 
-    TextView RegisterRedirection;
-    CheckBox myCheckBox;
+    EditText editloginUsername,editloginPassword;
+    TextView EVtoRegistration;
+    CheckBox CheckBox;
+
+    Button LoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // method to color red and redirection to register
-        RegisterTORedColor();
-        // remember method
+
+        RedRegisterToLogin();
         checkRemember();
 
 
 
     }
 
-    public void RegisterTORedColor(){
-        RegisterRedirection=findViewById(R.id.RegisterRedirection);
+    public void RedRegisterToLogin(){
+        EVtoRegistration=findViewById(R.id.toRegister);// kani last error mao nag crashes ang program
 
-        String ToColorRed=RegisterRedirection.getText().toString();
-        String targetWord="Register";
+        String ToColorRed=EVtoRegistration.getText().toString();
+        String targetWord="Register";// kani last error nako
         int startIndex = ToColorRed.indexOf(targetWord);
         SpannableString spannableString = new SpannableString(ToColorRed);
         spannableString.setSpan(new ForegroundColorSpan(Color.RED), startIndex, startIndex + targetWord.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        RegisterRedirection.setText(spannableString);
+        EVtoRegistration.setText(spannableString);
 
-    //    Intent intent= new Intent(MainActivity.this, RegisterActivity.class);
-    //    startActivity(intent);
-            RegisterRedirection.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        EVtoRegistration.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                    Intent intent= new Intent(MainActivity.this, RegisterActivity.class);
-                    startActivity(intent);
-                    onResume();
-                }
-            });
+                Intent intent= new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
-    public void checkRemember(){
-        CheckBox myCheckBox = findViewById(R.id.myCheckBox);
 
-        myCheckBox.setOnClickListener(new View.OnClickListener() {
+    public void checkRemember(){
+       CheckBox = findViewById(R.id.myCheckBox);
+
+        CheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Check the state of the CheckBox

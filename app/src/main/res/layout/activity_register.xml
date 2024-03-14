@@ -12,8 +12,9 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logorescueme"/>
+        android:layout_height="50dp"
+        android:rotationX="-8"
+        android:src="@drawable/logorescueme" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -33,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="Register"
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -51,6 +52,20 @@
                 android:drawableLeft="@drawable/baseline_account_box_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/register_email"
+                android:background="@drawable/lavander_border"
+                android:layout_marginTop="15dp"
+                android:padding="8dp"
+                android:hint="Email"
+                android:inputType="text"
+                android:drawableLeft="@drawable/baseline_mail_24"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black"/>
+
 
             <EditText
                 android:layout_width="match_parent"
@@ -84,7 +99,7 @@
                 android:layout_marginTop="15dp"
                 android:padding="8dp"
                 android:hint="Real Name"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:drawableLeft="@drawable/baseline_account_circle_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
@@ -101,18 +116,6 @@
                 android:drawableLeft="@drawable/baseline_home_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/register_captcha"
-                android:background="@drawable/lavander_border"
-                android:layout_marginTop="15dp"
-                android:padding="8dp"
-                android:hint="Enter a captcha"
-                android:inputType="textPassword"
-                android:drawableLeft="@drawable/baseline_autorenew_24"
-                android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
 
 
             <LinearLayout
@@ -125,12 +128,13 @@
                 <Button
                     android:layout_width="130dp"
                     android:layout_height="60dp"
-                    android:text="Login"
+                    android:text="Save"
                     android:textColor="@color/azure"
-                    android:id="@+id/login_button"
+                    android:id="@+id/registerSave_button"
                     android:textSize="18sp"
                     android:layout_marginTop="15dp"
                     app:cornerRadius="20dp"/>
+
                 <Button
 
                     android:layout_width="130dp"
@@ -151,7 +155,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/LoginRedirection"
+                android:id="@+id/toLogin"
                 android:text="Already register? Login"
                 android:layout_gravity="center"
                 android:padding="8dp"
