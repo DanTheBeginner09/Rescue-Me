@@ -104,18 +104,25 @@
                 android:drawablePadding="8dp"
                 android:textColor="@color/black"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/register_selectBarangay"
-                android:background="@drawable/lavander_border"
-                android:layout_marginTop="15dp"
-                android:padding="8dp"
-                android:hint="Select Barangay"
-                android:inputType="textPassword"
-                android:drawableLeft="@drawable/baseline_home_24"
-                android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+           <ScrollView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:cardCornerRadius="30dp"
+               app:cardElevation="20dp">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:id="@+id/register_selectBarangay"
+                   android:background="@drawable/lavander_border"
+                   android:layout_marginTop="15dp"
+                   android:padding="8dp"
+                   android:hint="Select Barangay"
+                   android:inputType="textPassword"
+                   android:drawableLeft="@drawable/baseline_home_24"
+                   android:drawablePadding="8dp"
+                   android:textColor="@color/black"/>
+
+           </ScrollView>
 
 
             <LinearLayout
